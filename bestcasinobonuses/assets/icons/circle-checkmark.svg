@@ -1,0 +1,10 @@
+<svg width="10px" height="10px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 11 11" style="enable-background:new 0 0 11 11;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#004789;}
+</style>
+<path id="check-staerken" class="st0" d="M5.5,0C2.462,0,0,2.462,0,5.5S2.462,11,5.5,11S11,8.538,11,5.5l0,0C11,2.462,8.538,0,5.5,0
+	z M9.014,4.053L5.152,7.922c-0.135,0.12-0.307,0.19-0.488,0.2H4.33c-0.181-0.01-0.353-0.08-0.488-0.2L2.024,6.096
+	c-0.108-0.112-0.108-0.288,0-0.4L2.74,4.98c0.111-0.109,0.289-0.109,0.4,0l1.162,1.159c0.111,0.109,0.289,0.109,0.4,0l3.185-3.191
+	c0.112-0.107,0.288-0.107,0.4,0l0.712,0.706C9.108,3.762,9.114,3.935,9.013,4.05L9.014,4.053z"/>
+</svg>

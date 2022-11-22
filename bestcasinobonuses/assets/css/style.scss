@@ -1,0 +1,1819 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+$large-breakpoint: 1035px;
+$medium-breakpoint: 991px;
+$small-breakpoint: 767px;
+$mini-breakpoint: 575px;
+
+*:focus {
+  outline: 0;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  color: #222222;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #222222;
+}
+
+a {
+  text-decoration: none;
+}
+
+svg {
+  overflow: hidden;
+  width: 15px;
+  height: 15px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 12px;
+}
+
+header {
+  background: #003669;
+
+  .logo-menu-container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10.5px 0;
+
+    .logo {
+      a {
+        img {
+          width: 140px;
+          height: 35px;
+        }
+      }
+    }
+
+    .menu {
+      .menu-main-menu-container {
+        ul {
+          display: flex;
+          align-items: center;
+
+          li {
+            list-style: none;
+            margin: 0 0 0 25px;
+
+            a {
+              text-transform: capitalize;
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 22px;
+              color: #ffffff;
+              transition: .5s;
+
+              &:hover {
+                color: #f9c100;
+              }
+            }
+
+            &.current-menu-item {
+              a {
+                color: #f9c100;
+              }
+            }
+          }
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        display: none;
+      }
+    }
+
+    .menu-breakpoint {
+      top: 60px;
+      left: -124%;
+      position: absolute;
+      transition: .8s;
+      z-index: 9;
+      width: 100%;
+
+      .menu-main-menu-container {
+        ul {
+          background: linear-gradient(to right top, #001534, #012148, #022d5d, #023a72, #004789);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          li {
+            list-style: none;
+            padding: 15px 0;
+
+            a {
+              text-transform: capitalize;
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 22px;
+              color: #ffffff;
+              transition: .5s;
+
+              &:hover {
+                color: #f9c100;
+              }
+            }
+
+            &.current-menu-item {
+              a {
+                color: #f9c100;
+              }
+            }
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              padding: 10px 0;
+            }
+          }
+        }
+      }
+
+      &.is-active {
+        @media only screen and (max-width: $medium-breakpoint) {
+          left: 0;
+          z-index: 9999999999;
+        }
+      }
+    }
+
+    .hamburger {
+      display: none;
+      place-items: center;
+      position: absolute;
+      cursor: pointer;
+      height: 43px;
+      width: 36px;
+      top: 11px;
+      right: 19px;
+
+      .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background: #ffffff;
+        margin: 6px 0;
+        transition: .5s;
+      }
+
+      &.is-active {
+        .bar1 {
+          transform: rotate(-45deg) translate(-9px, 6px);
+          background: #f9c100;
+        }
+
+        .bar2 {
+          opacity: 0;
+        }
+
+        .bar3 {
+          transform: rotate(45deg) translate(-8px, -8px);
+          background: #f9c100;
+        }
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        display: block;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 10.5px 15px;
+    }
+  }
+}
+
+.general-title-container {
+  background: #004789;
+
+  .title-text {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 25px 0 35px 0;
+    background: 48% 0;
+
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 40px;
+      text-transform: capitalize;
+      color: #ffffff;
+      margin: 0 0 15px 0;
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        font-size: 34px;
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        font-size: 32px;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        font-size: 28px;
+        line-height: 32px;
+        text-align: center;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      color: #ffffff;
+      text-align: justify;
+      width: 727px;
+
+      @media only screen and (max-width: $small-breakpoint) {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 35px 15px;
+      display: none;
+    }
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      padding: 30px 15px;
+    }
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      padding: 25px 15px;
+    }
+  }
+
+  .title-text-breakpoint {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 25px 0 35px 0;
+    background: 48% 0;
+    display: none;
+
+    h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 40px;
+      text-transform: capitalize;
+      color: #ffffff;
+      margin: 0 0 15px 0;
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        font-size: 34px;
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        font-size: 32px;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        font-size: 30px;
+        line-height: 32px;
+        text-align: center;
+
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      color: #ffffff;
+      text-align: justify;
+      width: 727px;
+
+      @media only screen and (max-width: $small-breakpoint) {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 35px 15px;
+      display: block;
+    }
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      padding: 30px 15px;
+    }
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      padding: 25px 15px;
+    }
+  }
+}
+
+.page-container {
+  background: #ffffff;
+
+  .page-content {
+    width: 1000px;
+    margin: 0 auto;
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+}
+
+.casinos-container {
+  margin: 43px 0 50px 0;
+
+  .title-text {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      display: flex;
+      align-items: center;
+      margin: 0 0 23px 0;
+
+      svg {
+        height: 25px;
+        width: 25px;
+        flex-shrink: 0;
+
+        path {
+          fill: #f9c100;
+        }
+      }
+
+      h2 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-size: 26px;
+        line-height: 27px;
+        margin: 0 0 0 10px;
+
+        @media only screen and (max-width: $small-breakpoint) {
+          font-size: 24px;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          font-size: 20px;
+          line-height: 24px;
+          text-align: center;
+          margin: 5px 0 0 0;
+        }
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        flex-direction: column;
+        margin: 0 0 5px 0;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      text-align: justify;
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        font-size: 12px;
+        line-height: 19px;
+      }
+    }
+  }
+
+  .terms-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 9px;
+    line-height: 22px;
+    color: #676767;
+    margin: 36px 0 9px 0;
+
+    p {
+      color: #676767;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+    }
+
+
+    a {
+      color: #004789;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    @media only screen and (max-width: $small-breakpoint) {
+      margin: 15px 0 8px 0;
+    }
+  }
+
+  .casino-container {
+    border-radius: 7px;
+    border: 1px solid #e2e6e9;
+    margin-bottom: 30px;
+
+    .casino-number-name {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      position: relative;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+      border-bottom: 1px solid #e2e6e9;
+
+      .number {
+        background: #f7f7f8;
+        height: 15px;
+        position: absolute;
+        top: 0;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h6 {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+          font-size: 10px;
+          line-height: 22px;
+          padding: 0 5.8px;
+        }
+      }
+
+      .name {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 10px;
+        line-height: 20px;
+        text-transform: uppercase;
+        margin: 0 10px 0 53px;
+        color: #222222;
+
+        &.word-color {
+          color: #ffffff;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          line-height: 18px;
+        }
+      }
+
+      &.first {
+        background: #004789;
+
+        .number {
+          background: #f9c100;
+        }
+      }
+
+      &.second {
+        .number {
+          background: #e2e6e9;
+        }
+      }
+
+      &.third {
+        .number {
+          background: #ec8d06;
+        }
+      }
+    }
+
+    .casino-inside-objects {
+      display: flex;
+      flex-direction: column;
+      background: #f7f7f8;
+
+      .logo-rating-bonus-btn {
+        display: flex;
+        align-items: center;
+        padding: 20px 20px 20px 20px;
+
+        .logo {
+          background: #353535;
+          width: 140px;
+          height: 80px;
+          border-radius: 7px;
+          margin: 0 20px 0 0;
+          flex-shrink: 0;
+
+          a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+              width: 98px;
+            }
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            margin: 0 0 15px 0;
+          }
+        }
+
+        .rating {
+          background: #ffffff;
+          border: 1px solid #e2e6e9;
+          border-radius: 7px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          width: 100px;
+          height: 80px;
+          margin: 0 20px 0 0;
+          flex-shrink: 0;
+
+          p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: 9px;
+            margin: 11px 0 3px 0;
+
+            span {
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 700;
+              font-size: 26px;
+              line-height: 22px;
+            }
+          }
+
+          h3 {
+            font-size: 10px;
+            text-transform: uppercase;
+            margin: 0 0 6px 0;
+          }
+
+          .star {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid #e2e6e9;
+            width: 100%;
+            height: 100%;
+
+            svg {
+              width: 14px;
+              height: 15px;
+              margin: 0 0px;
+            }
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            margin: 0 0 15px 0;
+          }
+        }
+
+        .bonus-tc-apply {
+          display: flex;
+          flex-direction: column;
+          width: 506px;
+
+          .bonus {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            h2 {
+              font-size: 14px;
+              line-height: 17px;
+              transition: .5s;
+              text-transform: uppercase;
+
+              &:hover {
+                color: #004789;
+                text-decoration: underline;
+              }
+
+              @media only screen and (max-width: $small-breakpoint) {
+                line-height: 22px;
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              justify-content: center;
+            }
+          }
+
+          .full-tc-apply {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 300;
+            font-size: 9px;
+            line-height: 22px;
+            color: #676767;
+            margin: 4px 0 0 0;
+
+            p {
+              color: #676767;
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 300;
+            }
+
+            a {
+              color: #004789;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            text-align: center;
+          }
+
+          @media only screen and (max-width: $small-breakpoint) {
+            width: 100%;
+            padding: 0 30px;
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            padding: 0;
+          }
+        }
+
+        .bonus-code-btn {
+          width: 120px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          margin: 0 0 0 51px;
+          flex-shrink: 0;
+
+          .bonus-code {
+            background: url(assets/images/code-bg.png);
+            border: 1px dashed #e2e6e9;
+            border-radius: 7px;
+
+            h6 {
+              text-transform: uppercase;
+              font-size: 10px;
+              line-height: 22px;
+              text-align: center;
+            }
+          }
+
+          .btn {
+            width: 100%;
+            border-radius: 7px;
+            background: #004789;
+            transition: .5s;
+            margin: 10px 0 0 0;
+
+            a {
+              width: 100%;
+              font-family: 'Open Sans', sans-serif;
+              font-size: 14px;
+              line-height: 22px;
+              text-transform: capitalize;
+              color: #ffffff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 9px 0;
+              transition: .5s;
+            }
+
+            &:hover {
+              background: #f9c100;
+
+              a {
+                color: #004789;
+              }
+            }
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            margin: 15px 0 0 0;
+          }
+        }
+
+        @media only screen and (max-width: $large-breakpoint) {
+          flex-direction: column;
+          padding: 15px 20px 15px 20px;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          padding: 15px 15px 15px 15px;
+        }
+      }
+
+      .plus18-terms-text {
+        border-top: 1px solid #e2e6e9;
+        background: #ffffff;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 9px;
+        line-height: 15px;
+        color: #676767;
+        text-align: justify;
+        padding: 15px 20px 15px 20px;
+      }
+    }
+  }
+
+  &.bottom-casino-container {
+    margin: 43px 0 100px 0;
+
+    .casino-container {
+      .casino-number-name {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        position: relative;
+        border-top-left-radius: 7px;
+        border-top-right-radius: 7px;
+        border-bottom: 1px solid #e2e6e9;
+
+        .name {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+          font-size: 10px;
+          line-height: 20px;
+          text-transform: uppercase;
+          margin: 0 10px 0 20px;
+          color: #222222;
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            line-height: 18px;
+          }
+        }
+      }
+
+      .casino-inside-objects {
+        display: flex;
+        flex-direction: column;
+        background: #f7f7f8;
+
+        .logo-rating-bonus-btn {
+          display: flex;
+          align-items: center;
+          padding: 20px 20px 20px 20px;
+
+          .logo {
+            background: #353535;
+            width: 140px;
+            height: 80px;
+            border-radius: 7px;
+            margin: 0 20px 0 0;
+            flex-shrink: 0;
+
+            a {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              img {
+                width: 98px;
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              margin: 0 0 15px 0;
+            }
+          }
+
+          .rating {
+            background: #ffffff;
+            border: 1px solid #e2e6e9;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100px;
+            height: 80px;
+            margin: 0 20px 0 0;
+            flex-shrink: 0;
+
+            p {
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 300;
+              font-size: 9px;
+              margin: 11px 0 3px 0;
+
+              span {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 22px;
+              }
+            }
+
+            h3 {
+              font-size: 10px;
+              text-transform: uppercase;
+              margin: 0 0 6px 0;
+            }
+
+            .star {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-top: 1px solid #e2e6e9;
+              width: 100%;
+              height: 100%;
+
+              svg {
+                width: 14px;
+                height: 15px;
+                margin: 0 0px;
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              margin: 0 0 15px 0;
+            }
+          }
+
+          .bonus-tc-apply {
+            display: flex;
+            flex-direction: column;
+            width: 506px;
+
+            .bonus {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+
+              h2 {
+                font-size: 14px;
+                line-height: 17px;
+                transition: .5s;
+                text-transform: uppercase;
+
+                &:hover {
+                  color: #004789;
+                  text-decoration: underline;
+                }
+
+                @media only screen and (max-width: $small-breakpoint) {
+                  line-height: 22px;
+                }
+              }
+
+              @media only screen and (max-width: $large-breakpoint) {
+                justify-content: center;
+              }
+            }
+
+            .full-tc-apply {
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 300;
+              font-size: 9px;
+              line-height: 22px;
+              color: #676767;
+              margin: 4px 0 0 0;
+
+              a {
+                color: #004789;
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              text-align: center;
+            }
+
+            @media only screen and (max-width: $small-breakpoint) {
+              width: 100%;
+              padding: 0 30px;
+            }
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              padding: 0;
+            }
+          }
+
+          .bonus-code-btn {
+            width: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 0 0 51px;
+            flex-shrink: 0;
+
+            .bonus-code {
+              background: url(assets/images/code-bg.png);
+              border: 1px dashed #e2e6e9;
+              border-radius: 7px;
+
+              h6 {
+                text-transform: uppercase;
+                font-size: 10px;
+                line-height: 22px;
+                text-align: center;
+              }
+            }
+
+            .btn {
+              width: 100%;
+              border-radius: 7px;
+              background: #004789;
+              transition: .5s;
+              margin: 10px 0 0 0;
+
+              a {
+                width: 100%;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 14px;
+                line-height: 22px;
+                text-transform: capitalize;
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 9px 0;
+                transition: .5s;
+              }
+
+              &:hover {
+                background: #f9c100;
+
+                a {
+                  color: #004789;
+                }
+              }
+            }
+
+            @media only screen and (max-width: $large-breakpoint) {
+              margin: 15px 0 0 0;
+            }
+          }
+
+          @media only screen and (max-width: $large-breakpoint) {
+            flex-direction: column;
+            padding: 15px 20px 15px 20px;
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            padding: 15px 15px 15px 15px;
+          }
+        }
+
+        .plus18-terms-text {
+          border-top: 1px solid #e2e6e9;
+          background: #ffffff;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 300;
+          font-size: 9px;
+          line-height: 15px;
+          color: #676767;
+          text-align: justify;
+          padding: 15px 20px 15px 20px;
+
+        }
+      }
+    }
+  }
+}
+
+.casino-choose-container {
+  background: #f7f7f8;
+  padding: 45px 0 25px 0;
+
+  .casinos-choose-container-inside {
+    width: 1000px;
+    margin: 0 auto;
+
+    .title-text {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 15px 0;
+
+      .title {
+        display: flex;
+        align-items: center;
+        margin: 0 0 23px 0;
+
+        svg {
+          height: 25px;
+          width: 25px;
+          flex-shrink: 0;
+
+          path {
+            fill: #f9c100;
+          }
+        }
+
+        h2 {
+          font-family: 'Inter', sans-serif;
+          font-weight: 700;
+          font-size: 26px;
+          line-height: 27px;
+          margin: 0 0 0 10px;
+          text-transform: capitalize;
+
+          @media only screen and (max-width: $small-breakpoint) {
+            font-size: 24px;
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            font-size: 20px;
+            text-align: center;
+            margin: 5px 0 0 0;
+            line-height: 24px;
+          }
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          flex-direction: column;
+          margin: 0 0 5px 0;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: justify;
+        margin: 0 0 15px 0;
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          font-size: 12px;
+          line-height: 19px;
+        }
+      }
+    }
+
+    .casinos-choose-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .casino-choose {
+        background: #ffffff;
+        border: 1px solid #e2e6e9;
+        padding: 20px;
+        border-radius: 7px;
+        width: calc(50% - 10px);
+        margin: 0 0 20px 0;
+
+        .title-description {
+          display: flex;
+          flex-direction: column;
+
+          .title {
+            display: flex;
+            align-items: center;
+
+            svg {
+              height: 20px;
+              width: 20px;
+              flex-shrink: 0;
+
+              path {
+                fill: #004789;
+              }
+            }
+
+            h3 {
+              font-size: 16px;
+              line-height: 12px;
+              margin: 0 0 0 8px;
+
+              @media only screen and (max-width: $mini-breakpoint) {
+                margin: 6px 0 0 0;
+              }
+            }
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              flex-direction: column;
+              justify-content: center;
+            }
+          }
+
+          .description {
+            font-size: 14px;
+            line-height: 22px;
+            color: #676767;
+            text-align: justify;
+            margin: 12px 0 0 0;
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              margin: 10px 0 0 0;
+            }
+          }
+        }
+
+        @media only screen and (max-width: $small-breakpoint) {
+          width: 100%;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          padding: 15px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+}
+
+.terms-h1 {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin: 50px 0 50px 0;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 27px;
+
+  svg {
+    height: 25px;
+    width: 25px;
+    flex-shrink: 0;
+    margin: 0 0 15px 0;
+
+    path {
+      fill: #f9c100;
+    }
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  @media only screen and (max-width: $mini-breakpoint) {
+    margin: 40px 0 40px 0;
+    font-size: 24px;
+  }
+}
+
+.description-container {
+  font-size: 14px;
+  line-height: 22px;
+  color: #222222;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  padding: 45px 0 25px 0;
+
+  h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 27px;
+    margin: 0 0 0 0;
+    text-align: center;
+
+    svg {
+      height: 22px;
+      width: 22px;
+      flex-shrink: 0;
+
+      path {
+        fill: #f9c100;
+      }
+    }
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      font-size: 24px;
+    }
+  }
+
+  h2 {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 27px;
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 0 25px 0;
+    color: #222222;
+
+    svg {
+      height: 25px;
+      width: 25px;
+      flex-shrink: 0;
+      margin: 0 10px 0 0;
+
+      path {
+        fill: #f9c100;
+      }
+    }
+
+    @media only screen and (max-width: $small-breakpoint) {
+      font-size: 24px;
+    }
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      justify-content: center;
+      flex-direction: column-reverse;
+      font-size: 22px;
+      line-height: 24px;
+      margin: 5px 0 0 0;
+    }
+  }
+
+  h3, h4 {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 25px 0 25px 0;
+    text-align: left;
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      text-align: center;
+      margin: 20px 0 20px 0;
+    }
+  }
+
+  h5, h6 {
+    font-size: 15px;
+    margin: 25px 0 25px 0;
+    text-align: left;
+    line-height: 20px;
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      text-align: center;
+      margin: 20px 0 20px 0;
+    }
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 25px 0 25px 0;
+    color: #222222;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      margin: 20px 0 20px 0;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+
+  a {
+    color: #004789;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    font-size: 14px;
+    line-height: 22px;
+    text-align: justify;
+    margin: 25px 0 25px 0;
+
+    li {
+      list-style: none;
+      display: flex;
+
+      &::before {
+        list-style: none;
+        content: url("assets/icons/circle-checkmark.svg");
+        padding-right: 10px;
+      }
+    }
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      margin: 20px 0 20px 0;
+      font-size: 12px;
+      line-height: 20px;
+    }
+  }
+
+  ol {
+    font-size: 14px;
+    line-height: 22px;
+    margin: 25px 0 25px 18px;
+
+    li {
+      list-style: decimal;
+    }
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      margin: 20px 0 20px 15px;
+      font-size: 12px;
+      line-height: 20px;
+
+    }
+  }
+
+  blockquote {
+    font-size: 14px;
+    font-style: italic;
+    margin: 25px 40px 25px 40px;
+
+    p {
+      text-align: left;
+    }
+
+    @media only screen and (max-width: $mini-breakpoint) {
+      margin: 20px 0 20px 0;
+      font-size: 12px;
+    }
+  }
+
+  &.page-terms {
+    border-radius: 7px;
+    border: 1px solid #e2e6e9;
+    padding: 10px 150px 25px 150px;
+    margin: 0 0 100px 0;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      padding: 10px 15px 25px 15px;
+    }
+  }
+
+  &.page-home {
+    h2 {
+      text-transform: capitalize;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 27px;
+      display: flex;
+      flex-flow: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 2px 0 25px 0;
+      color: #222222;
+
+      svg {
+        height: 25px;
+        width: 25px;
+        flex-shrink: 0;
+        margin: 0 10px 0 0;
+
+        path {
+          fill: #f9c100;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          margin: 0 0 3px 0;
+        }
+      }
+
+      @media only screen and (max-width: $small-breakpoint) {
+        font-size: 24px;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        justify-content: center;
+        flex-direction: column-reverse;
+        font-size: 22px;
+        line-height: 24px;
+        margin: 5px 0 0 0;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+      margin: 25px 0 25px 0;
+      color: #222222;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        margin: 10px 0 10px 0;
+        font-size: 12px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &.page-new-casino {
+    padding: 45px 0 80px 0;
+  }
+}
+
+.faq-container {
+  background: #f7f7f8;
+  padding: 45px 0 25px 0;
+
+  .faq-container-inside {
+    width: 1000px;
+    margin: 0 auto;
+
+    .title-text {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 15px 0;
+
+      .title {
+        display: flex;
+        align-items: center;
+        margin: 0 0 23px 0;
+
+        svg {
+          height: 25px;
+          width: 25px;
+          flex-shrink: 0;
+
+          path {
+            fill: #f9c100;
+          }
+        }
+
+        h2 {
+          font-family: 'Inter', sans-serif;
+          font-weight: 700;
+          font-size: 26px;
+          line-height: 27px;
+          margin: 0 0 0 10px;
+
+          @media only screen and (max-width: $small-breakpoint) {
+            font-size: 24px;
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            font-size: 20px;
+            line-height: 24px;
+            text-align: center;
+            margin: 5px 0 0 0;
+          }
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          flex-direction: column;
+          margin: 0 0 5px 0;
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: justify;
+        margin: 0 0 15px 0;
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          font-size: 12px;
+          line-height: 19px;
+        }
+      }
+    }
+
+    .show {
+      .text-container {
+        border: 1px solid #e2e6e9;
+        background: #ffffff;
+        border-radius: 7px;
+        padding: 12.5px 20px 12.5px 20px;
+        margin: 0 0 20px 0;
+
+        .title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          h3 {
+            font-size: 16px;
+            line-height: 23px;
+            margin: 0 10px 0 0;
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              margin: 5px 0 0 0;
+              text-align: center;
+            }
+          }
+
+          .arrow-down {
+            svg {
+              width: 24px;
+              height: 24px;
+            }
+          }
+
+          .arrow-up {
+            display: none;
+
+            svg {
+              width: 24px;
+              height: 24px;
+            }
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            flex-direction: column;
+          }
+        }
+
+        .show-text {
+          p {
+            font-size: 14px;
+            line-height: 22px;
+            text-align: justify;
+            color: #676767;
+            margin: 10px 0 0 0;
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              margin: 5px 0 0 0;
+            }
+          }
+        }
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        padding: 12.5px 10px 12.5px 10px;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      width: 100%;
+      padding: 0 15px;
+    }
+  }
+}
+
+footer {
+  .back-to-top {
+    display: block;
+    position: relative;
+
+    a {
+      position: absolute;
+      background: #ececec;
+      text-align: center;
+      right: 48%;
+      top: -56px;
+      padding: 7px 7px;
+      transition: .5s;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 17px;
+        height: 17px;
+
+        path {
+          stroke: #ffffff;
+          stroke-width: 3;
+        }
+      }
+
+      &:hover {
+        background: #c7c7c7;
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        right: 48.7%;
+      }
+
+      @media only screen and (max-width: $mini-breakpoint) {
+        right: 47.7%;
+      }
+    }
+
+    @media only screen and (max-width: $large-breakpoint) {
+      display: none;
+    }
+  }
+
+  .footer-top {
+    background: #f7f7f8;
+
+    .icon-description-container {
+      width: 1000px;
+      margin: 0 auto;
+      padding: 40px 0 20px 0;
+
+      .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 25px 0;
+
+        a {
+          svg {
+            width: 140px;
+            height: 40px;
+            fill: #222222;
+            transition: .5s;
+
+            path {
+              fill: #222222;
+              transition: .5s;
+            }
+
+            g {
+              fill: #222222;
+              transition: .5s;
+            }
+
+            .st0 {
+              fill: none;
+              stroke: #222222;
+              stroke-width: 53;
+              transition: .5s;
+            }
+
+            .st1 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: #222222;
+              transition: .5s;
+            }
+
+            &.plus18 {
+              width: 37px;
+            }
+
+            &.gamstop {
+              width: 120px;
+              margin: 0 17px 0 17px;
+
+              @media only screen and (max-width: $medium-breakpoint) {
+                margin: 0 0 0 0;
+              }
+            }
+
+            &.ga {
+              width: 54px;
+            }
+
+            &.bga {
+              width: 220px;
+              margin: 0 7px 0 -8px;
+
+              @media only screen and (max-width: $medium-breakpoint) {
+                margin: 0 0 0 0;
+              }
+            }
+
+            &.gamcare {
+              width: 115px;
+            }
+          }
+
+          &:hover {
+            svg {
+              fill: #676767;
+
+              path {
+                fill: #676767;
+              }
+
+              g {
+                fill: #676767;
+              }
+
+              .st0 {
+                fill: none;
+                stroke: #676767;
+                stroke-width: 53;
+              }
+
+              .st1 {
+                fill-rule: evenodd;
+                clip-rule: evenodd;
+                fill: #676767;
+              }
+            }
+          }
+        }
+
+        @media only screen and (max-width: $medium-breakpoint) {
+          flex-direction: column;
+        }
+
+        @media only screen and (max-width: $mini-breakpoint) {
+          margin: 0 0 15px 0;
+        }
+      }
+
+      .description {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        color: #676767;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+
+        p {
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 400;
+          color: #676767;
+          margin: 0 0 20px 0;
+        }
+      }
+
+      @media only screen and (max-width: $large-breakpoint) {
+        width: 100%;
+        padding: 40px 15px 20px 15px;
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        padding: 20px 15px 1px 15px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    background: #f3f3f3;
+
+    .copyright-menu {
+      width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 19px 0;
+
+      .copyright {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+        color: #676767;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+      }
+
+      .menu-footer-menu-container {
+        ul {
+          display: flex;
+
+          li {
+            list-style: none;
+            margin: 0 0 0 25px;
+
+            a {
+              font-family: 'Open Sans', sans-serif;
+              font-weight: 400;
+              color: #676767;
+              font-size: 14px;
+              line-height: 22px;
+              transition: .5s;
+
+              &:hover {
+                color: #222222;
+              }
+            }
+
+            &.current-menu-item {
+              a {
+                color: #222222;
+              }
+            }
+
+            @media only screen and (max-width: $mini-breakpoint) {
+              margin: 0 0 10px 0;
+            }
+          }
+
+          @media only screen and (max-width: $medium-breakpoint) {
+            margin: 0 0 10px 0;
+          }
+
+          @media only screen and (max-width: $mini-breakpoint) {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
+
+      @media only screen and (max-width: $large-breakpoint) {
+        width: 100%;
+        padding: 19px 15px;
+      }
+
+      @media only screen and (max-width: $medium-breakpoint) {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+
+
+
